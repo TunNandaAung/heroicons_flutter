@@ -103,8 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            const Icon(
-              HeroiconsFlutter.academicCap,
+            Icon(
+              HeroiconsFlutter.fromString('academic.cap'),
               color: Colors.blue,
             )
           ],
