@@ -1,36 +1,52 @@
 library heroicons_flutter;
 
 import 'package:flutter/material.dart';
-import 'package:heroicons_flutter/heroicons.dart';
+import 'package:heroicons_flutter/helpers.dart';
+import 'package:heroicons_flutter/heroicons_list.dart';
 
 /// A Calculator.
-class HeroiconsFlutter {
-  static const IconData academicCap = _HeroiconsIconData(0xe804);
+class HeroiconsSolid {
+  static const IconData academicCap = _HeroiconsSolidIconData(0xe804);
 
   static IconData fromString(String name) {
-    final splitted = name.split(RegExp(r"[\s\-\_\.]"));
+    final camelCaseString = toCamelCase(name);
 
-    String camelCaseString =
-        splitted[0].substring(0, 1).toLowerCase() + splitted[0].substring(1);
-
-    for (var i = 1; i < splitted.length; i++) {
-      camelCaseString += splitted[i].substring(0, 1).toUpperCase() +
-          splitted[i].substring(1).toLowerCase();
-    }
-
-    if (!heroiconsList.containsKey(camelCaseString)) {
+    if (!heroiconsSolidList.containsKey(camelCaseString)) {
       throw 'No heroicon with such name: $name';
     }
 
-    return _HeroiconsIconData(heroiconsList[camelCaseString]!);
+    return _HeroiconsSolidIconData(heroiconsSolidList[camelCaseString]!);
   }
 }
 
-class _HeroiconsIconData extends IconData {
-  const _HeroiconsIconData(int code)
+class HeroiconsOutline {
+  static const IconData academicCap = _HeroiconsOutlineIconData(0xe802);
+
+  static IconData fromString(String name) {
+    final camelCaseString = toCamelCase(name);
+
+    if (!heroiconsOutlineList.containsKey(camelCaseString)) {
+      throw 'No heroicon with such name: $name';
+    }
+
+    return _HeroiconsOutlineIconData(heroiconsOutlineList[camelCaseString]!);
+  }
+}
+
+class _HeroiconsSolidIconData extends IconData {
+  const _HeroiconsSolidIconData(int code)
       : super(
           code,
-          fontFamily: 'Heroicons Flutter',
+          fontFamily: 'Heroicons Solid',
+          fontPackage: 'heroicons_flutter',
+        );
+}
+
+class _HeroiconsOutlineIconData extends IconData {
+  const _HeroiconsOutlineIconData(int code)
+      : super(
+          code,
+          fontFamily: 'Heroicons Outline',
           fontPackage: 'heroicons_flutter',
         );
 }

@@ -104,7 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             Icon(
-              HeroiconsFlutter.fromString('academic.cap'),
+              HeroiconsSolid.fromString('academic.cap'),
+              color: Colors.blue,
+            ),
+            Icon(
+              HeroiconsOutline.fromString('academic.cap'),
               color: Colors.blue,
             )
           ],
