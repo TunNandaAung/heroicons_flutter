@@ -27,3 +27,6 @@ flutter:
     - family: Heroicons Outline
       fonts:
         - asset: assets/fonts/heroicons-outline.ttf
+    - family: Heroicons Mini
+      fonts:
+        - asset: assets/fonts/heroicons-mini.ttf

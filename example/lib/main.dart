@@ -103,12 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            Icon(
-              HeroiconsSolid.fromString('academic.cap'),
+            const Icon(
+              HeroiconsSolid.faceSmile,
+              color: Colors.blue,
+            ),
+            const Icon(
+              HeroiconsMini.banknotes,
               color: Colors.blue,
             ),
             Icon(
-              HeroiconsOutline.fromString('academic.cap'),
+              HeroiconsOutline.fromString('academicCap'),
               color: Colors.blue,
             )
           ],
@@ -117,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(HeroiconsSolid.sparkles),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
