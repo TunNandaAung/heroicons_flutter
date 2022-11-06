@@ -1,8 +1,34 @@
 library heroicons_flutter;
 
 import 'package:flutter/material.dart';
-import 'package:heroicons_flutter/helpers.dart';
 import 'package:heroicons_flutter/heroicons_list.dart';
+
+String _toCamelCase(String input) {
+  final splitted = input.split(RegExp(r"[\s\-\_\.]"));
+
+  String result =
+      splitted[0].substring(0, 1).toLowerCase() + splitted[0].substring(1);
+
+  for (var i = 1; i < splitted.length; i++) {
+    result += splitted[i].substring(0, 1).toUpperCase() +
+        splitted[i].substring(1).toLowerCase();
+  }
+
+  return result;
+}
+
+bool _checkIconExists(String name) {
+  String camelCaseString = _toCamelCase(name);
+  return heroiconsList
+      .where((icon) => icon.name.toLowerCase() == camelCaseString.toLowerCase())
+      .isNotEmpty;
+}
+
+int _getIconCode(String name) {
+  return heroiconsList
+      .firstWhere((element) => element.name == _toCamelCase(name))
+      .code;
+}
 
 class HeroiconsSolid {
   static const academicCap = _HeroiconsSolidIconData(0xe800);
@@ -299,13 +325,13 @@ class HeroiconsSolid {
   static const xMark = _HeroiconsSolidIconData(0xe923);
 
   static IconData fromString(String name) {
-    final camelCaseString = toCamelCase(name);
+    final iconExists = _checkIconExists(name);
 
-    if (!heroiconsList.containsKey(camelCaseString)) {
+    if (!iconExists) {
       throw 'No such solid heroicon with the given name: $name';
     }
 
-    return _HeroiconsSolidIconData(heroiconsList[camelCaseString]!);
+    return _HeroiconsSolidIconData(_getIconCode(name));
   }
 }
 
@@ -604,13 +630,13 @@ class HeroiconsOutline {
   static const xMark = _HeroiconsOutlineIconData(0xe923);
 
   static IconData fromString(String name) {
-    final camelCaseString = toCamelCase(name);
+    final iconExists = _checkIconExists(name);
 
-    if (!heroiconsList.containsKey(camelCaseString)) {
+    if (!iconExists) {
       throw 'No such outline heroicon with the given name: $name';
     }
 
-    return _HeroiconsOutlineIconData(heroiconsList[camelCaseString]!);
+    return _HeroiconsOutlineIconData(_getIconCode(name));
   }
 }
 
@@ -909,13 +935,13 @@ class HeroiconsMini {
   static const xMark = _HeroiconsMiniIconData(0xe923);
 
   static IconData fromString(String name) {
-    final camelCaseString = toCamelCase(name);
+    final iconExists = _checkIconExists(name);
 
-    if (!heroiconsList.containsKey(camelCaseString)) {
+    if (!iconExists) {
       throw 'No such mini heroicon with the given name: $name';
     }
 
-    return _HeroiconsMiniIconData(heroiconsList[camelCaseString]!);
+    return _HeroiconsMiniIconData(_getIconCode(name));
   }
 }
 
