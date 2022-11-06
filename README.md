@@ -1,39 +1,54 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# heroicons_flutter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<p align="center">
+<img src="https://raw.githubusercontent.com/tunnandaaung/heroicons_flutter/main/example/assets/heroicons-cover.png" height="200" alt="Heroicons Cover" />
+</p>
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+[Heroicons](https://heroicons.com) for Flutter.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Icons List
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+All the available icons can be found at the [official Heroicons website](https://heroicons.com) or at the demo site built with this package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+All the available Heroicons can be used as Flutter icon as  shown below. P
 
 ```dart
-const like = 'sample';
+import 'package:heroicons_flutter/heroicons_flutter.dart';
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  Widget build(BuildContext context) {
+    return new Column(
+      children: <Widget>[
+        const Icon(
+          // Solid Icon
+          HeroiconsSolid.faceSmile,
+          color: Colors.blue,
+        ),
+        const Icon(
+          // Mini Icon
+          HeroiconsMini.banknotes,
+          color: Colors.blue,
+        ),
+        Icon(
+          // Outline Icon
+          HeroiconsOutline.academicCap,
+          color: Colors.blue,
+        )
+      ],
+    );
+  }
+}
 ```
 
-## Additional information
+You can also use the icon by passing the string icon names to the `fromString()` method as below.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+// camelCase
+HericonsOutline.fromString("academicCap")
+```
+
+`fromString()` method also accepts `snake_case`, `kebab-case` and `dot.notation` strings.
