@@ -26,7 +26,8 @@ bool _checkIconExists(String name) {
 
 int _getIconCode(String name) {
   return heroiconsList
-      .firstWhere((element) => element.name == _toCamelCase(name))
+      .firstWhere(
+          (icon) => icon.name.toLowerCase() == _toCamelCase(name).toLowerCase())
       .code;
 }
 
