@@ -1,18 +1,18 @@
 # heroicons_flutter
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/tunnandaaung/heroicons_flutter/main/example/assets/heroicons-cover.png" height="200" alt="Heroicons Cover" />
+<img src="./example/assets/heroicons-cover.png" height="100%" width="100%" alt="Heroicons Cover" />
 </p>
 
-[Heroicons](https://heroicons.com) for Flutter.
+[Heroicons](https://heroicons.com) from [Tailwind Labs](hhttps://github.com/tailwindlabs) as Flutter icons set. See the demo [here](https://heroicons-flutter.vercel.app).
 
 ## Icons List
 
-All the available icons can be found at the [official Heroicons website](https://heroicons.com) or at the demo site built with this package.
+All the available icons can be found at the [official Heroicons website](https://heroicons.com) or at the [demo site](https://heroicons-flutter.vercel.app) built with this package.
 
 ## Usage
 
-All the available Heroicons can be used as Flutter icon as  shown below. P
+All the available Heroicons can be used as Flutter icon as  shown below.
 
 ```dart
 import 'package:heroicons_flutter/heroicons_flutter.dart';

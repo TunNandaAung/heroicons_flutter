@@ -1,7 +1,7 @@
 name: heroicons_flutter
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: Heroicons from Tailwind Labs as Flutter icons set.
+version: 0.2.0
+homepage: https://heroicons-flutter.vercel.app
 
 environment:
   sdk: ">=2.18.2 <3.0.0"
@@ -11,13 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
   fonts:
