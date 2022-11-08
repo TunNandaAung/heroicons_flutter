@@ -4,7 +4,7 @@
 <img src="./example/assets/heroicons-cover.png" height="100%" width="100%" alt="Heroicons Cover" />
 </p>
 
-[Heroicons](https://heroicons.com) from [Tailwind Labs](hhttps://github.com/tailwindlabs) as Flutter icons set. See the demo [here](https://heroicons-flutter.vercel.app).
+[Heroicons](https://heroicons.com) from [Tailwind Labs](https://github.com/tailwindlabs) as Flutter icons set. See the demo [here](https://heroicons-flutter.vercel.app).
 
 ## Icons List
 
