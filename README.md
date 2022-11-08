@@ -1,7 +1,7 @@
 # heroicons_flutter
 
 <p align="center">
-<img src="./example/assets/heroicons-cover.png" height="100%" width="100%" alt="Heroicons Cover" />
+<img src="https://res.cloudinary.com/team7/image/upload/v1667907844/assets/heroicons-cover_vyy6m7.png" height="100%" width="100%" alt="Heroicons Cover" />
 </p>
 
 [Heroicons](https://heroicons.com) from [Tailwind Labs](https://github.com/tailwindlabs) as Flutter icons set. See the demo [here](https://heroicons-flutter.vercel.app).

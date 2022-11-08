@@ -1,6 +1,6 @@
 name: heroicons_flutter
 description: Heroicons from Tailwind Labs as Flutter icons set.
-version: 0.2.0
+version: 0.2.1
 homepage: https://heroicons-flutter.vercel.app
 
 environment:
