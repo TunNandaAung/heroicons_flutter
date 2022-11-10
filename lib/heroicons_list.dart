@@ -1,4 +1,3 @@
-// ignore: library_private_types_in_public_api
 List<Heroicon> heroiconsList = [
   Heroicon(
     name: "academicCap",
@@ -1170,8 +1169,12 @@ List<Heroicon> heroiconsList = [
   ),
 ];
 
+/// Base class to create list of available Heroicons.
 class Heroicon {
+  /// The [name] of the icon.
   String name;
+
+  /// Hexadecimal [code] for the icon.
   int code;
 
   Heroicon({

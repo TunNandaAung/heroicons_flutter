@@ -1,8 +1,10 @@
+/// [Heroicons](https://heroicons.com) from [Tailwind Labs](https://github.com/tailwindlabs) as Flutter icons set.
 library heroicons_flutter;
 
 import 'package:flutter/material.dart';
 import 'package:heroicons_flutter/heroicons_list.dart';
 
+/// Converts the [input] string to camel case string.
 String _toCamelCase(String input) {
   final splitted = input.split(RegExp(r"[\s\-\_\.]"));
 
@@ -17,6 +19,9 @@ String _toCamelCase(String input) {
   return result;
 }
 
+/// Checks whether the icon with the given [name] exists or not.
+///
+/// Returns `true` is icon exists, `false` otherwise.
 bool _checkIconExists(String name) {
   String camelCaseString = _toCamelCase(name);
   return heroiconsList
@@ -24,6 +29,7 @@ bool _checkIconExists(String name) {
       .isNotEmpty;
 }
 
+/// Retrives the hexadecimal code of the given icon [name].
 int _getIconCode(String name) {
   return heroiconsList
       .firstWhere(
@@ -31,6 +37,7 @@ int _getIconCode(String name) {
       .code;
 }
 
+/// Class for solid Heroicons.
 class HeroiconsSolid {
   static const academicCap = _HeroiconsSolidIconData(0xe800);
   static const adjustmentsHorizontal = _HeroiconsSolidIconData(0xe801);
@@ -325,6 +332,10 @@ class HeroiconsSolid {
   static const xCircle = _HeroiconsSolidIconData(0xe922);
   static const xMark = _HeroiconsSolidIconData(0xe923);
 
+  /// Retrieves the solid Heroicon from given [name].
+  ///
+  /// Throws an [ArgumentError] if solid icon with [name] does not exist.
+  /// Returns [IconData] if icon with [name] exists.
   static IconData fromString(String name) {
     final iconExists = _checkIconExists(name);
 
@@ -336,6 +347,7 @@ class HeroiconsSolid {
   }
 }
 
+/// Class for outline Heroicons.
 class HeroiconsOutline {
   static const academicCap = _HeroiconsOutlineIconData(0xe800);
   static const adjustmentsHorizontal = _HeroiconsOutlineIconData(0xe801);
@@ -630,6 +642,10 @@ class HeroiconsOutline {
   static const xCircle = _HeroiconsOutlineIconData(0xe922);
   static const xMark = _HeroiconsOutlineIconData(0xe923);
 
+  /// Retrieves the outline Heroicon from given [name].
+  ///
+  /// Throws an [ArgumentError] if outline icon with [name] does not exist.
+  /// Returns [IconData] if icon with [name] exists.
   static IconData fromString(String name) {
     final iconExists = _checkIconExists(name);
 
@@ -641,6 +657,7 @@ class HeroiconsOutline {
   }
 }
 
+/// Class for mini Heroicons.
 class HeroiconsMini {
   static const academicCap = _HeroiconsMiniIconData(0xe800);
   static const adjustmentsHorizontal = _HeroiconsMiniIconData(0xe801);
@@ -935,6 +952,10 @@ class HeroiconsMini {
   static const xCircle = _HeroiconsMiniIconData(0xe922);
   static const xMark = _HeroiconsMiniIconData(0xe923);
 
+  /// Retrieves the mini Heroicon from given [name].
+  ///
+  /// Throws an [ArgumentError] if mini icon with [name] does not exist.
+  /// Returns [IconData] if icon with [name] exists.
   static IconData fromString(String name) {
     final iconExists = _checkIconExists(name);
 
