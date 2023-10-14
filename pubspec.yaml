@@ -1,18 +1,20 @@
 name: heroicons_flutter
-description: Heroicons from Tailwind Labs as Flutter icons set. Includes all solid, outline and mini Heroicons.
+description:
+  Heroicons from Tailwind Labs as Flutter icons set. Includes all solid, outline
+  and mini Heroicons.
 version: 0.2.3
 repository: https://github.com/tunnandaaung/heroicons_flutter
 homepage: https://heroicons-flutter.vercel.app
 
 environment:
-  sdk: ">=2.18.2 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=2.18.2 <4.0.0'
+  flutter: '>=1.17.0'
 
 dependencies:
   flutter:
     sdk: flutter
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.3
   flutter_test:
     sdk: flutter
 

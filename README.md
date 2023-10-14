@@ -45,6 +45,8 @@ class MyWidget extends StatelessWidget {
 ```
 
 You can also use the icon by passing the string icon names to the `fromString()` method as below.
+> [!WARNING]
+> Tree shaking won’t work when `fromString()` is used since this needs to go through the list of icons to find the one that matches the given string.
 
 ```dart
 // camelCase
