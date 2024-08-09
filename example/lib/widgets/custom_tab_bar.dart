@@ -22,9 +22,10 @@ class CustomTabBar extends StatelessWidget {
         ),
       ),
       child: DefaultTabController(
-        length: 3,
+        length: 4,
         child: TabBar(
           indicatorPadding: EdgeInsets.zero,
+          dividerColor: Colors.transparent,
           labelColor: const Color(0xFF8B5CF6),
           labelStyle: GoogleFonts.inter(),
           unselectedLabelColor: Colors.black,
@@ -41,14 +42,19 @@ class CustomTabBar extends StatelessWidget {
               .map(
                 (i, e) => MapEntry(
                   i,
-                  Tab(
-                    text: e.values.first,
-                    icon: Icon(
-                      e.keys.first,
-                      color: i == selectedIndex
-                          ? const Color(0xFF8B5CF6)
-                          : Colors.black,
-                      size: 20.0,
+                  Padding(
+                    padding: MediaQuery.of(context).size.width > 640
+                        ? const EdgeInsets.only(bottom: 0.0)
+                        : const EdgeInsets.only(bottom: 8.0),
+                    child: Tab(
+                      text: e.values.first,
+                      icon: Icon(
+                        e.keys.first,
+                        color: i == selectedIndex
+                            ? const Color(0xFF8B5CF6)
+                            : Colors.black,
+                        size: 20.0,
+                      ),
                     ),
                   ),
                 ),

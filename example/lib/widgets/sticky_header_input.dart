@@ -28,9 +28,9 @@ class StickyHeaderInput extends SliverPersistentHeaderDelegate {
                 color: Colors.grey.shade200,
               ),
             ),
-            prefixIcon: const Icon(HeroiconsSolid.academicCap),
-            prefixIconColor: MaterialStateColor.resolveWith((states) {
-              if (states.contains(MaterialState.focused)) {
+            prefixIcon: const Icon(HeroiconsSolid.magnifyingGlass),
+            prefixIconColor: WidgetStateColor.resolveWith((states) {
+              if (states.contains(WidgetState.focused)) {
                 return const Color(0xFF8B5CF6);
               }
               return Colors.grey.shade200;
