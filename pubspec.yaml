@@ -32,3 +32,6 @@ flutter:
     - family: Heroicons Mini
       fonts:
         - asset: assets/fonts/heroicons-mini.ttf
+    - family: Heroicons Micro
+      fonts:
+        - asset: assets/fonts/heroicons-micro.ttf
