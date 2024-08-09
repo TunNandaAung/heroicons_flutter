@@ -21,8 +21,8 @@ class HeroiconsFlutter extends StatelessWidget {
         primarySwatch: Colors.indigo,
         textTheme: GoogleFonts.interTextTheme(),
         inputDecorationTheme: Theme.of(context).inputDecorationTheme.copyWith(
-          prefixIconColor: MaterialStateColor.resolveWith((states) {
-            if (states.contains(MaterialState.focused)) {
+          prefixIconColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.focused)) {
               return const Color(0xFF8B5CF6);
             }
             return Colors.grey.shade500;
@@ -55,6 +55,8 @@ class _HomeState extends State<Home> {
         return HeroiconsSolid.fromString(name);
       case 2:
         return HeroiconsMini.fromString(name);
+      case 3:
+        return HeroiconsMicro.fromString(name);
     }
     return HeroiconsOutline.fromString(name);
   }
@@ -84,6 +86,7 @@ class _HomeState extends State<Home> {
                     child: _urlContainer(
                       url: 'https://github.com/TunNandaAung/heroicons_flutter',
                       label: 'Documentation',
+                      icon: HeroiconsOutline.bookOpen,
                     ),
                   ),
                   Positioned(
@@ -92,6 +95,7 @@ class _HomeState extends State<Home> {
                     child: _urlContainer(
                       url: 'https://heroicons.com',
                       label: 'heroicons.com',
+                      icon: HeroiconsOutline.link,
                     ),
                   ),
                 ],
@@ -159,7 +163,8 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _urlContainer({required String url, required String label}) {
+  Widget _urlContainer(
+      {required String url, required String label, required IconData icon}) {
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF8B5CF6).withOpacity(.09),
@@ -179,7 +184,7 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Icon(HeroiconsOutline.bookOpen),
+              Icon(icon),
               const SizedBox(width: 8.0),
               Text(
                 label,
@@ -230,7 +235,8 @@ class _HomeState extends State<Home> {
     var width = MediaQuery.of(context).size.width;
 
     return Container(
-      margin: const EdgeInsets.all(8.0),
+      margin:
+          width > 640 ? const EdgeInsets.all(12.0) : const EdgeInsets.all(0),
       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
       decoration: BoxDecoration(
         color: const Color(0xFFf3eeff),
@@ -242,6 +248,7 @@ class _HomeState extends State<Home> {
           {HeroiconsOutline.sparkles: 'Outline'},
           {HeroiconsSolid.rocketLaunch: 'Solid'},
           {HeroiconsMini.fire: 'Mini'},
+          {HeroiconsMicro.bolt: 'Micro'},
         ],
         selectedIndex: selectedIndex,
         onTap: (index) => setState(() => selectedIndex = index),
