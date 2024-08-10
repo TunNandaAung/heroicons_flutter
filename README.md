@@ -44,7 +44,7 @@ class MyWidget extends StatelessWidget {
         )
         Icon(
           // Micro Icon
-          HeroiconsOutline.radio,
+          HeroiconsMicro.radio,
           color: Colors.blue,
         )
       ],
