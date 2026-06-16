@@ -1,3 +1,4 @@
+// ignore: library_private_types_in_public_api
 List<Heroicon> heroiconsList = [
   Heroicon(name: "academicCap", code: 0xe800),
   Heroicon(name: "adjustmentsHorizontal", code: 0xe801),
