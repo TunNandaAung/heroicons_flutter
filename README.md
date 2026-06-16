@@ -1,22 +1,22 @@
 # heroicons_flutter
 
 <p align="center">
-<img src="https://res.cloudinary.com/team7/image/upload/v1667907844/assets/heroicons-cover_vyy6m7.png" height="100%" width="100%" alt="Heroicons Cover" />
+<img src="https://raw.githubusercontent.com/tunnandaaung/heroicons_flutter/main/example/assets/heroicons-cover.png" height="200" alt="Heroicons Cover" />
 </p>
 
-[Heroicons](https://heroicons.com) from
-[Tailwind Labs](https://github.com/tailwindlabs) as Flutter icons set. See the
-demo [here](https://heroicons-flutter.vercel.app).
+[Heroicons](https://heroicons.com) for Flutter.
 
 ## Icons List
 
 All the available icons can be found at the
-[official Heroicons website](https://heroicons.com) or at the
-[demo site](https://heroicons-flutter.vercel.app) built with this package.
+[official Heroicons website](https://heroicons.com) or at the demo site built
+with this package.
 
 ## Usage
 
-All the available Heroicons can be used as Flutter icon as shown below.
+### Static icons (recommended)
+
+Import the default library and use the icon classes directly:
 
 ```dart
 import 'package:heroicons_flutter/heroicons_flutter.dart';
@@ -24,46 +24,65 @@ import 'package:heroicons_flutter/heroicons_flutter.dart';
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
+  @override
   Widget build(BuildContext context) {
-    return new Column(
-      children: <Widget>[
+    return Column(
+      children: [
         const Icon(
-          // Solid Icon
           HeroiconsSolid.faceSmile,
           color: Colors.blue,
         ),
         const Icon(
-          // Mini Icon
           HeroiconsMini.banknotes,
           color: Colors.blue,
         ),
-        Icon(
-          // Outline Icon
+        const Icon(
           HeroiconsOutline.academicCap,
           color: Colors.blue,
-        )
-        Icon(
-          // Micro Icon
-          HeroiconsMicro.radio,
-          color: Colors.blue,
-        )
+        ),
       ],
     );
   }
 }
 ```
 
-You can also use the icon by passing the string icon names to the `fromString()`
-method as below.
+Icon fonts are tree-shaken when you use static icons this way.
 
-> [!WARNING] Tree shaking won’t work when `fromString()` is used since this
-> needs to go through the list of icons to find the one that matches the given
-> string.
+### String lookup (optional)
+
+Resolve icons from a string at runtime with `named()` on the same class:
 
 ```dart
-// camelCase
-HericonsOutline.fromString("academicCap")
+import 'package:heroicons_flutter/heroicons_flutter.dart';
+
+Icon(HeroiconsOutline.named('academicCap'));
+Icon(HeroiconsSolid.named('face_smile'));
 ```
 
-`fromString()` method also accepts `snake_case`, `kebab-case` and `dot.notation`
-strings.
+`named()` accepts `camelCase`, `snake_case`, `kebab-case`, and
+`dot.notation` strings.
+
+### Deprecated `fromString()`
+
+`HeroiconsOutline.fromString()` (and the same method on `HeroiconsSolid`,
+`HeroiconsMini`, and `HeroiconsMicro`) is **deprecated**. Use `named()` instead:
+
+```dart
+// Deprecated
+HeroiconsOutline.fromString('academicCap');
+
+// Preferred
+HeroiconsOutline.named('academicCap');
+```
+
+> [!WARNING]
+> Tree shaking does not apply when `named()` is used. The lookup maps reference
+> every icon for that style, so most font glyphs are kept.
+
+## Regenerating icon code
+
+Icon classes are generated from `lib/heroicons_list.dart`:
+
+```bash
+dart run tool/generate_heroicons.dart
+```
