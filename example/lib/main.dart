@@ -50,15 +50,15 @@ class _HomeState extends State<Home> {
   IconData getIcon(String name) {
     switch (selectedIndex) {
       case 0:
-        return HeroiconsOutline.fromString(name);
+        return HeroiconsOutline.named(name);
       case 1:
-        return HeroiconsSolid.fromString(name);
+        return HeroiconsSolid.named(name);
       case 2:
-        return HeroiconsMini.fromString(name);
+        return HeroiconsMini.named(name);
       case 3:
-        return HeroiconsMicro.fromString(name);
+        return HeroiconsMicro.named(name);
     }
-    return HeroiconsOutline.fromString(name);
+    return HeroiconsOutline.named(name);
   }
 
   @override
